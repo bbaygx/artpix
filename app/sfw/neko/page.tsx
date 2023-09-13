@@ -2,14 +2,14 @@
 "use client";
 
 import { useState, useRef } from 'react';
-import { fetchData } from "./hooks/useFetch"
+import { fetchData } from "../../hooks/useFetch"
 
 
-export default function Home() {
+export default function Neko() {
 
   const [toggle, setToggle] = useState<Boolean>(false)
 
-  const { data, isLoading, isError, isSuccess, refetch } = fetchData('sfw', 'waifu', 30); // Mengambil 30 gambar
+  const { data, isLoading, isError, isSuccess, refetch } = fetchData('sfw', 'neko', 30); // Mengambil 30 gambar
 
   // useEffect(()=> {
   //   refetch()
