@@ -10,7 +10,7 @@ export default function Neko() {
 
   const [toggle, setToggle] = useState<Boolean>(false)
 
-  const { data, isLoading, isError, isSuccess, refetch } = useFetchData('sfw', 'waifu', 30); // Mengambil 30 gambar
+  const { data, isLoading, isError, isSuccess, refetch } = useFetchData('sfw', 'neko', 30); // Mengambil 30 gambar
 
   useEffect(()=> {
     refetch()
