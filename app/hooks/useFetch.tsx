@@ -1,7 +1,7 @@
 import { useQuery } from '@tanstack/react-query';
 import axios from 'axios';
 
-export function fetchData(type: string, category: string, numberOfImages: number) {
+export function useFetchData(type: string, category: string, numberOfImages: number) {
   return useQuery(['fetchData', type, category, numberOfImages], async () => {
     try {
       const response = await axios.post(`${process.env.BASE_URL}/${type}/${category}`, {

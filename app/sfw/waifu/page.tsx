@@ -6,7 +6,7 @@ import { useFetchData } from "../../hooks/useFetch"
 import { AiOutlineReload } from 'react-icons/ai';
 
 
-export default function Neko() {
+export default function Waifu() {
 
   const [toggle, setToggle] = useState<Boolean>(false)
 

@@ -31,7 +31,7 @@ const SidebarArr: SideArr[] = [
 ]
 
 const styles = {
-    card: 'item flex gap-5 p-3 items-center mb-6 text-gray-700 rounded-md justify-start duration-300'
+    card: 'item flex gap-5 p-3 items-center mb-6 text-gray-700 rounded-md hover:bg-gray-300 justify-start duration-300'
 }
 
 function Sidebar({ children}: {
@@ -42,7 +42,7 @@ function Sidebar({ children}: {
     return (
         <div className='h-screen flex bg-white'>
             
-                <aside className="w-64 p-6 shadow-xl overflow-y-auto">
+                <aside className="w-0 md:w-64 duration-200 p-6 shadow-xl overflow-y-auto">
                     {SidebarArr.map((item, i) => (
                         <Link key={i} href={item.link} className={styles.card}>
                             {item.icons}
@@ -50,7 +50,7 @@ function Sidebar({ children}: {
                         </Link>
                     ))}
                 </aside>
-            <main className='w-full overflow-y-auto'>
+            <main className='w-full overflow-y-auto px-4'>
                 {children}
             </main>
         </div>
@@ -58,3 +58,8 @@ function Sidebar({ children}: {
 }
 
 export default Sidebar
+
+
+
+
+

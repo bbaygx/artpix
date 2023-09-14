@@ -6,14 +6,15 @@ import { useFetchData } from "../../hooks/useFetch"
 import { AiOutlineReload } from 'react-icons/ai';
 
 
-export default function Neko() {
+export default function Awoo() {
 
   const [toggle, setToggle] = useState<Boolean>(false)
 
-  const { data, isLoading, isError, isSuccess, refetch } = useFetchData('sfw', 'waifu', 30); // Mengambil 30 gambar
+  const { data, isLoading, isError, isSuccess, refetch } = useFetchData('sfw', 'awoo', 30); // Mengambil 30 gambar
 
   useEffect(()=> {
     refetch()
+    console.log(toggle)
   },[toggle])
 
   if (isSuccess) {

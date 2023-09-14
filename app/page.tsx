@@ -1,19 +1,20 @@
 
 "use client";
 
-import { useState, useRef } from 'react';
-import { fetchData } from "./hooks/useFetch"
+import { useState, useEffect } from 'react';
+import { useFetchData } from "./hooks/useFetch"
+import { AiOutlineReload } from 'react-icons/ai';
 
 
 export default function Home() {
 
   const [toggle, setToggle] = useState<Boolean>(false)
 
-  const { data, isLoading, isError, isSuccess, refetch } = fetchData('sfw', 'waifu', 30); // Mengambil 30 gambar
+  const { data, isLoading, isError, isSuccess, refetch } = useFetchData('sfw', 'waifu', 30); // Mengambil 30 gambar
 
-  // useEffect(()=> {
-  //   refetch()
-  // },[])
+  useEffect(()=> {
+    refetch()
+  },[toggle])
 
   if (isSuccess) {
 
@@ -40,6 +41,9 @@ export default function Home() {
               </dialog>
             </div>
           ))}
+        <button className='fixed bottom-14 right-14 rounded-full text-white bg-zinc-800 p-4' onClick={()=>setToggle(!toggle)}>
+          <AiOutlineReload size={25}/>
+        </button>
         </div>
       </>
     )
